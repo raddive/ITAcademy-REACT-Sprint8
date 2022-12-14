@@ -10,3 +10,7 @@
 #
 # N1.E4 Canvia els estils que creguis pertinents perque se sembli el màxim possible a la web oficial de Star Wars.
 #
+# N1.E5 implementarem una pàgina inicial de benvinguda
+#
+
+
