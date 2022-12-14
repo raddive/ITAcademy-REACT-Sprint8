@@ -7,17 +7,15 @@ export default function StarshipsItemList (props) {
         ship : props.ship
       }
     return (
-        <div className="container mx-auto flex">
-            <p className="w-1/6"></p>
-            <div className="card w-4/6 bg-base-100 shadow-xl pt-10 mt-5">
+        <div className="container mx-auto flex w-2/3">
+            <div className="card w-full bg-base-100 shadow-xl pt-10 mt-5">
                 <Link to="/StarshipDetails" state={locationData}>
                     <div className="card-body">
-                        <h2 className="card-title">{props.ship?.name}</h2>
+                        <h2 className="card-title">{props.index} - {props.ship?.name}</h2>
                         <p>{props.ship?.model}</p>
                     </div>
                 </Link>
             </div>
-            <p className="w-1/6"></p>
         </div>
     );
 };

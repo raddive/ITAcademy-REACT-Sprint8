@@ -1,14 +1,13 @@
-import NoWorkResult from "postcss/lib/no-work-result";
 import React, { useEffect, useState } from "react";
 import { useRef } from 'react';
 
-import noImage from "../images/noImage.jpg"
+import { imgPath,noImgUrl } from "../variables/variables";
 
 export default function StarShipDetails (props) { 
 
     const imgRef = useRef();
-    const imgUrl="https://starwars-visualguide.com/assets/img/starships/"+props.id+".jpg";
-    const onImageError = () => imgRef.current.src="https://starwars-visualguide.com/assets/img/big-placeholder.jpg";
+    const imgUrl=imgPath+props.id+".jpg";
+    const onImageError = () => imgRef.current.src=noImgUrl;
 
     const [shipData,setShipData] =useState(props.ship);
 
