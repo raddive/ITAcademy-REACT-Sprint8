@@ -5,16 +5,14 @@ import Header from "./Header";
 
 export default function Landing () { 
     return (
-        <div>
+        <div className="h-screen">
             <Header />
-            <div className="hero h-96  bg-base-200">
-                <div className="hero-content text-center">
-                    <div className="max-w-md">
-                        <h1 className="text-5xl font-bold">WELCOME!!!</h1>
-                        <nav>
-                            <Link to="/main"><button className="btn btn-success mt-5">STARSHIPS</button></Link>
-                        </nav>
-                    </div>
+            <div className="grid place-items-center h-1/2 ">
+                <div>
+                    <h1 className="text-5xl font-bold">WELCOME!!!</h1>
+                    <nav>
+                        <Link to="/main"><button className="btn btn-active btn-ghost mt-5">STARSHIPS</button></Link>
+                    </nav>
                 </div>
             </div>
         </div>
