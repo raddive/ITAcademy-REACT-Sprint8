@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import logo from '../images/empire.png';
-
 import StarshipsItemList from "../components/StarshipsItemList";
+import Loading from "./Loading";
 
 export default function ShipList () { 
     const [starshipsData, setStarshipsData] = useState({})
@@ -13,7 +12,6 @@ export default function ShipList () {
 //Leyendo data desde una API
 //utilizamoa useEffect,[] porque solo se llama una vez
     useEffect( () => {
-        console.log("useEffect ejecutado");
         fetch("https://swapi.dev/api/starships/")
         .then(res => res.json())
         .then(data => {setStarshipsData(data);
@@ -22,10 +20,12 @@ export default function ShipList () {
     },[]);
 
     const listStarShips = starships.map(item => {
+        let str = item.url;
+        let sAux= str.replace("https://swapi.dev/api/starships/","").replace("/","");
         return (
-            <StarshipsItemList key={item.name}
-                name={item.name}
-                model={item.model}
+            <StarshipsItemList key={sAux}
+                id={sAux}
+                ship={item}
             />
         )
     })
@@ -35,13 +35,11 @@ export default function ShipList () {
         <div>
             {bDataLoaded && (
                 <div>
-                    <p>{listStarShips}</p>
+                    {listStarShips}
                 </div>)
             }
             {!bDataLoaded && (
-                <div>
-                    <p className="text-3xl">LOADING....</p>
-                </div>)
+                <Loading />)
             }
         </div>
     );

@@ -6,7 +6,7 @@ import Footer from "./Footer";
 
 export default function Main () { 
     return (
-        <div>
+        <div className="Img_background">
             <Header/>
             <ShipList />
             <Footer />
