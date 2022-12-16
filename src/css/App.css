@@ -18,13 +18,18 @@ body {
   pointer-events: none;
 }
 
+.SpinLogoBig {
+  height: 30vmin;
+  pointer-events: none;
+}
+
 .Logo {
   height: 10vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .SpinLogo {
+  .SpinLogo,.SpinLogoBig {
     animation: SpinLogo-anim infinite 20s linear;
   }
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {Navigate} from 'react-router-dom';
 import useInfiniteScroll from 'react-infinite-scroll-hook';
 
 import StarshipsItemList from "../components/StarshipsItemList";
@@ -6,7 +7,7 @@ import Loading from "./Loading";
 
 import { apiUrl } from "../variables/variables";
 
-export default function ShipList () { 
+export default function ShipList (props) { 
 
 //USE STATE
     const [sNextURL, setNextURL] = useState("");
@@ -145,25 +146,27 @@ export default function ShipList () {
     return (
         // <div ref={rootRef}>
         <div>
-            {!bLoading && (
-                <div >
-                {/* <div> */}
-                    {listStarShips}
-                    {bMore && <span ref={sentryRef} >Loading more starships...</span>}
-                    <div className="mt-5 container mx-auto grid justify-items-end w-2/3">
-                        {bMore && <button className="btn btn-active btn-ghost" onClick={loadMore}>VIEW MORE</button>}
-                        {!bMore && 
-                            <div className="alert alert-info shadow-lg">
-                                <span>No more starships!!!!!.</span>
-                            </div>
-                        }
-                        <button  className="btn btn-active btn-ghost mt-3" onClick={refreshFromAPI}>Refresh data from Api</button>                        
-                    </div>
-                </div>)
-            }
-            {bLoading && (
-                <Loading />)
-            }
+            <div>
+                {!bLoading && (
+                    <div >
+                    {/* <div> */}
+                        {listStarShips}
+                        {bMore && <span ref={sentryRef} >Loading more starships...</span>}
+                        <div className="mt-5 container mx-auto grid justify-items-end w-2/3">
+                            {bMore && <button className="btn btn-active btn-ghost" onClick={loadMore}>VIEW MORE</button>}
+                            {!bMore && 
+                                <div className="alert alert-info shadow-lg">
+                                    <span>No more starships!!!!!.</span>
+                                </div>
+                            }
+                            <button  className="btn btn-active btn-ghost mt-3" onClick={refreshFromAPI}>Refresh data from Api</button>                        
+                        </div>
+                    </div>)
+                }
+                {bLoading && (
+                    <Loading />)
+                }
+            </div>
         </div>
     );
 };

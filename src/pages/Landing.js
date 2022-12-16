@@ -3,10 +3,10 @@ import {Link } from "react-router-dom";
 
 import Header from "./Header";
 
-export default function Landing () { 
+export default function Landing (props) { 
     return (
         <div className="h-screen">
-            <Header />
+            <Header userName={props.userName} logOut={props.logOut} setUser={props.setUser}/>
             <div className="grid place-items-center h-1/2 ">
                 <div>
                     <h1 className="text-5xl font-bold">WELCOME!!!</h1>

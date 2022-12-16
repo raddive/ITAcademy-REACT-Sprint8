@@ -5,11 +5,11 @@ import Header from "./Header";
 import StarShipDetails from "../components/StarshipDetails";
 import Footer from "./Footer";
 
-export default function ShipDetails () { 
+export default function ShipDetails (props) { 
     const location = useLocation();
     return (
         <div className="Img_background">
-            <Header/>
+            <Header userName={props.userName} logOut={props.logOut} setUser={props.setUser}/>
             <StarShipDetails
                 ship={location.state?.ship}
                 id={location.state?.id} />

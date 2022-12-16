@@ -12,5 +12,6 @@
 #
 # N1.E5 implementarem una pàgina inicial de benvinguda
 #
-
-
+# N1.E6 implementar una pantalla de login i registre
+#
+# N2.E7 El llistat de naus només pot ser visible per a usuaris/es registrats/des, has de protegir les rutes.
