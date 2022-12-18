@@ -11,9 +11,13 @@ import LoginRegister from './pages/LoginRegister';
 
 function App() {
 
-  const [userName,setUserName] = useState("");
+  const [userName,setUserName] = useState(localStorage.getItem("S8.User")?localStorage.getItem("S8.User"):"");
 
   useEffect( () => {
+    if(userName)
+      localStorage.setItem("S8.User",userName);
+    else
+      localStorage.removeItem("S8.User",userName);
 
   },[userName]);
 

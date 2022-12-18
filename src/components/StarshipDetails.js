@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useRef } from 'react';
 
+import Pilots from "./Pilots";
+import Films from "./Films";
+
 import { imgPath,noImgUrl } from "../variables/variables";
 
 export default function StarShipDetails (props) { 
@@ -19,14 +22,21 @@ export default function StarShipDetails (props) {
                 <div className="grid grid-cols-2 text-left w-full text-xl">
                     {Object.keys(shipData).map((key, index) => {
                         return (
-                            <div key={index}>
-                                <span className="text-2xl text-black">{key}</span>: {shipData[key]}
+                            <div>
+                                {key==="films" && (<Films films={shipData[key]} />)}
+                                {key==="pilots" && (<Pilots pilots={shipData[key]} />)}
+                                {key!=="films" && key!=="pilots" && (
+                                     <div key={index}>
+                                        <span className="text-2xl text-black">{key}</span> : {shipData[key]}
+                                    </div>
+                                    )
+                                }
                             </div>
                         )
                         })
                     }
                 </div>
             </div>
-        </div>
+       </div>
     );
 };

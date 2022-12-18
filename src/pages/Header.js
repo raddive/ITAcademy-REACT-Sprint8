@@ -17,13 +17,13 @@ export default function Header (props) {
                 </div>
                     {props.userName !== "" &&
                         <div className="flex w-1/4">
-                        <p className="flex-auto">{props.userName}</p> 
-                        <p className="flex-auto" onClick={props.logOut}>Log Out</p> 
+                        <p className="flex-auto text-2xl text-end">{props.userName}</p> 
+                        <p className="flex-auto text-2xl" onClick={props.logOut}>Log Out</p> 
                     </div>}
                     {props.userName === "" &&
                         <div className="flex w-1/4">
-                            <p className="flex-auto"><Link to="/login">LOGIN </Link></p> 
-                            <p className="flex-auto"><Link to="/register">REGISTER</Link></p> 
+                            <p className="flex-auto text-2xl text-end"><Link to="/login">LOGIN </Link></p> 
+                            <p className="flex-auto text-2xl"><Link to="/register">REGISTER</Link></p> 
                         </div>
                     }
             </div>

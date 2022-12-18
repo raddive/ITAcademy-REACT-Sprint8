@@ -15,3 +15,8 @@
 # N1.E6 implementar una pantalla de login i registre
 #
 # N2.E7 El llistat de naus només pot ser visible per a usuaris/es registrats/des, has de protegir les rutes.
+#
+# N2.E8 fitxa de cada nau mostrant les targetes dels seus pilots.
+#
+# N2.E9 itxa de cada nau mostrant les targetes dels seus films
+#
