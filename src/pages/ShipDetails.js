@@ -13,7 +13,6 @@ export default function ShipDetails (props) {
             <StarShipDetails
                 ship={location.state?.ship}
                 id={location.state?.id} />
-            <Footer />
         </div>
     );
 };

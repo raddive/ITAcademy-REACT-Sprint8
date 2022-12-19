@@ -9,7 +9,7 @@ import { imgPath,noImgUrl } from "../variables/variables";
 export default function StarShipDetails (props) { 
 
     const imgRef = useRef();
-    const imgUrl=imgPath+props.id+".jpg";
+    const imgUrl=imgPath+"starships/"+props.id+".jpg";
     const onImageError = () => imgRef.current.src=noImgUrl;
 
     const [shipData,setShipData] =useState(props.ship);
@@ -22,16 +22,23 @@ export default function StarShipDetails (props) {
                 <div className="grid grid-cols-2 text-left w-full text-xl">
                     {Object.keys(shipData).map((key, index) => {
                         return (
-                            <div>
-                                {key==="films" && (<Films films={shipData[key]} />)}
-                                {key==="pilots" && (<Pilots pilots={shipData[key]} />)}
+                            <>
                                 {key!=="films" && key!=="pilots" && (
-                                     <div key={index}>
+                                    <div key={index}>
                                         <span className="text-2xl text-black">{key}</span> : {shipData[key]}
                                     </div>
                                     )
                                 }
-                            </div>
+                            </>
+                        )
+                        })
+                    }
+                    {Object.keys(shipData).map((key, index) => {
+                        return (
+                            <>
+                                {key==="films" && (<Films films={shipData[key]} />)}
+                                {key==="pilots" && (<Pilots pilots={shipData[key]} />)}
+                            </>
                         )
                         })
                     }
