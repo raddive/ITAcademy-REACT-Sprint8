@@ -1,0 +1,9 @@
+import React from "react";
+import {render,screen} from '@testing-library/jest-dom'
+import Films from "./Films";
+
+describe("Films component", () => {
+    it('Debe existir el componente', () => {
+        render(<Films />);
+    })
+})
