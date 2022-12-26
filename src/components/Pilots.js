@@ -19,7 +19,7 @@ export default function Pilots (props) {
 
     return (
         <div>
-            <span className="text-2xl text-black">pilots</span>
+            <span className="text-2xl text-black">pilots :</span>
             <br/>
             {listPilots}
         </div>

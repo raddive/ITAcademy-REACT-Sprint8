@@ -25,7 +25,7 @@ export default function StarShipDetails (props) {
                             <>
                                 {key!=="films" && key!=="pilots" && (
                                     <div key={index}>
-                                        <span className="text-2xl text-black">{key}</span> : {shipData[key]}
+                                        <span className="text-2xl text-black">{key} : </span>{shipData[key]}
                                     </div>
                                     )
                                 }

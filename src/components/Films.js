@@ -21,7 +21,7 @@ export default function Films (props) {
 
     return (
         <div>
-            <span className="text-2xl text-black">films</span>
+            <span className="text-2xl text-black">films :</span>
             <br/>
             {listFilms}
         </div>
